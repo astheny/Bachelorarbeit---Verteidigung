@@ -23,9 +23,22 @@
 \begin{frame}[<+->]
   \setbeamercovered{dynamic}
   \frametitle{Ein F"arbungsproblem}
-  Es sei $\cE(n)$ die Klasse aller Graphen, welche die kantendisjunkte Vereinigung von $n$ vollst"andigen Graphen der Ordnung $n$ sind.
-  %% TODO: Bilder
+   Es sei $\cE(n)$ die Klasse aller Graphen, welche die kantendisjunkte Vereinigung von $n$ vollst"andigen Graphen der Ordnung $n$ sind.
+
+   \begin{problem}
+     Sei $G\in \cE(n)$. Was ist die chromatische Zahl von $G$?
+   \end{problem}
 \end{frame}
+ \begin{frame}
+   \setbeamercovered{dynamic}
+   \frametitle{Ein F"arbungsproblem}
+  \input{tikz1.tex}
+ \end{frame}
+ \begin{frame}
+   \setbeamercovered{dynamic}
+   \frametitle{Ein F"arbungsproblem}
+  \input{tikz2.tex}
+ \end{frame}
 
 \section{Die Erd\H os-Faber-Lov\'asz Vermutung}
 
@@ -64,7 +77,12 @@
       \item Sind $K,K'\in \mathcal{K}$ verschieden, so gilt $|K\cap K'| \leq 1$.
       \item $\bigcup\limits_{K\in \mathcal{K}} K = G$.
     \end{enumerate}
-  %% TODO: Bilder
+\end{frame}
+
+\begin{frame}
+  \setbeamercovered{dynamic}
+  \frametitle{Krauszzerlegungen}
+  \input{tikz3.tex}
 \end{frame}
 
 \begin{frame}[<+->]
@@ -75,8 +93,14 @@
     \item $\delta(\mathcal{K})$, der \DF{Minimalgrad} .
     \item $\kappa_{d}(G)$, die kleinste Zahl $p$, sodass $G$ eine Krauszzerlegung $\mathcal{K}$ mit $|\mathcal{K}| = p$ besitzt ($\kappa_{d}(G) = \infty$, falls kein solches $p$ existiert).
   \end{itemize}
-  %% TODO: Bilder
+  \visible<4> {
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/k5krauszdecomp}
+  \end{figure} }
 \end{frame}
+
+
 
 \begin{frame}[<+->]
   \setbeamercovered{dynamic}
@@ -124,11 +148,11 @@
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[<+->]
   \setbeamercovered{dynamic}
   \frametitle{Chromatische Zahl und Eigenwerte}
   \begin{theorem}[Wilf]
-    Ist $G$ ein zusammenh"angender Graph, so gilt $\chi(G) \leq \lambda_{1}(G) +1$.
+    Ist $G$ ein zusammenh"angender Graph, so gilt $\chi(G) \leq \lambda_{max}(G) +1$.
   \end{theorem}
   \begin{theorem}[Hoffman]
     Ist $G$ ein Graph, so gilt $\chi(G) \geq 1- \frac{\lambda_{max}(G)}{\lambda_{min}(G)}$.
