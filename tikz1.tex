@@ -1,31 +1,31 @@
 \tikzstyle{vertex}=[circle,fill=black,minimum size=10pt]
 \tikzstyle{edge} = [draw,line width=2pt]
-\tikzstyle{green edge} = [draw,line width=2pt,green]
+\tikzstyle{green edge} = [draw,line width=2pt,darkgreen]
 \tikzstyle{blue edge} = [draw,line width=2pt,blue]
 \tikzstyle{red edge} = [draw,line width=2pt,red]
 \tikzstyle{grey edge} = [draw,line width=2pt,yellow]
 
 \begin{figure}
-\begin{tikzpicture}[scale=1.8, auto,swap]
-  \foreach \pos/\name in { {(0,0)/a},{(0,1)/b},{(1,0)/c},{(1,1)/d}, % Erstes Quadrat
-                     {(1,2)/e},{(2,1)/f},{(2,2)/g}, % Zweites Quadrat
-                     {(2,0)/h},{(1,-1)/i},{(2,-1)/j}, % Drittes Quadrat
-                     {(3,0)/k},{(3,1)/l}} % Viertes Quadrat
-                     \node<1->[vertex] (\name) at \pos {};
+  \begin{tikzpicture}[scale=1.8, auto,swap]
+    \foreach \pos/\name in { {(0,0)/a},{(0,1)/b},{(1,0)/c},{(1,1)/d}, % Erstes Quadrat
+    {(1,2)/e},{(2,1)/f},{(2,2)/g}, % Zweites Quadrat
+    {(2,0)/h},{(1,-1)/i},{(2,-1)/j}, % Drittes Quadrat
+    {(3,0)/k},{(3,1)/l}} % Viertes Quadrat
+    \node<1->[vertex] (\name) at \pos {};
     % Connect vertices with edges and draw weights
-        \foreach \source/ \dest in {a/b,a/c,a/d,b/c,b/d,c/d,e/f,e/g,e/d,f/g,f/d,d/g,h/i,h/j,i/j,c/h,c/i,c/j,h/f,h/k,h/l,f/k,f/l,k/l}
-        \path<1->[edge] (\source) --  node{}  (\dest);
+    \foreach \source/ \dest in {a/b,a/c,a/d,b/c,b/d,c/d,e/f,e/g,e/d,f/g,f/d,d/g,h/i,h/j,i/j,c/h,c/i,c/j,h/f,h/k,h/l,f/k,f/l,k/l}
+    \path<1->[edge] (\source) --  node{}  (\dest);
 %
 %    % Start animating the vertex and edge selection. 
 
-        \foreach \source/ \dest in {a/b,a/c,a/d,b/c,b/d,c/d}
-          \path<2->[red edge] (\source) --  node{}  (\dest);
-        \foreach \source/ \dest in {e/f,e/g,e/d,f/g,f/d,d/g}
-          \path<3->[green edge] (\source) --  node{}  (\dest);
-        \foreach \source/ \dest in {h/i,h/j,i/j,c/h,c/i,c/j}
-          \path<4->[blue edge] (\source) --  node{}  (\dest);
-        \foreach \source/ \dest in {h/f,h/k,h/l,f/k,f/l,k/l}
-          \path<5->[grey edge] (\source) --  node{}  (\dest);
+    \foreach \source/ \dest in {a/b,a/c,a/d,b/c,b/d,c/d}
+    \path<2->[red edge] (\source) --  node{}  (\dest);
+    \foreach \source/ \dest in {e/f,e/g,e/d,f/g,f/d,d/g}
+    \path<2->[green edge] (\source) --  node{}  (\dest);
+    \foreach \source/ \dest in {h/i,h/j,i/j,c/h,c/i,c/j}
+    \path<2->[blue edge] (\source) --  node{}  (\dest);
+    \foreach \source/ \dest in {h/f,h/k,h/l,f/k,f/l,k/l}
+    \path<2->[grey edge] (\source) --  node{}  (\dest);
 
 %    % For convenience we use a background layer to highlight edges
 %    % This way we don't have to worry about the highlighting covering
@@ -37,5 +37,5 @@
 %    %    \foreach \source / \dest / \fr in {d/b/4,d/e/5,e/f/5,b/c/6,f/g/7}
 %    %        \path<\fr->[ignored edge] (\source.center) -- (\dest.center);
 %    %\end{pgfonlayer}
-\end{tikzpicture}
+  \end{tikzpicture}
 \end{figure}

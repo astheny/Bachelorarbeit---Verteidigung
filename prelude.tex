@@ -7,16 +7,21 @@
 \usepackage[latin9]{inputenc}
 \usepackage{enumerate}
 \usepackage{geometry}
-\usepackage{tikz}
-\usetikzlibrary{calc}
-
+% TIKZ
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
 \setbeamertemplate{items}[square]
 
 \newtheorem{proposition}[theorem]{Satz}
 \newtheorem{conjecture}[theorem]{Vermutung}
+\newtheorem{exmpl}[theorem]{Beispiel}
+\newtheorem{cor}[theorem]{Korollar}
 \newtheorem{remark}[theorem]{Bemerkung}
 \newcommand{\DF}[1]{{\bf #1\/}}
 
+
+% Farben
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
 %BESONDERE SCHRIFTARTEN:
 
 \newcommand{\cG}{{\cal G}}

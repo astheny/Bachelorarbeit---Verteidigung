@@ -1,7 +1,7 @@
 \tikzstyle{vertex}=[circle,fill=black,minimum size=10pt]
 \tikzstyle{red vertex}=[circle,fill=red,minimum size=10pt]
 \tikzstyle{blue vertex}=[circle,fill=blue,minimum size=10pt]
-\tikzstyle{green vertex}=[circle,fill=green,minimum size=10pt]
+\tikzstyle{green vertex}=[circle,fill=darkgreen,minimum size=10pt]
 \tikzstyle{grey vertex}=[circle,fill=yellow,minimum size=10pt]
 \tikzstyle{edge} = [draw,line width=2pt]
 
@@ -19,13 +19,13 @@
 %    % Start animating the vertex and edge selection. 
 
         \foreach \pos in { {(0,0)},{(1,-1)},{(1,2)},{(3,0)}}
-        \node<2->[red vertex] () at \pos{};
+        \node<1->[red vertex] () at \pos{};
         \foreach \pos in { {(0,1)},{(2,2)},{(2,0)}}
-        \node<3->[blue vertex] () at \pos{};
+        \node<1->[blue vertex] () at \pos{};
         \foreach \pos in { {(1,0)},{(2,1)}}
-        \node<4->[green vertex] () at \pos{};
+        \node<1->[green vertex] () at \pos{};
         \foreach \pos in { {(1,1)},{(2,-1)},{(3,1)}}
-        \node<5->[grey vertex] () at \pos{};
+        \node<1->[grey vertex] () at \pos{};
 
 %    % For convenience we use a background layer to highlight edges
 %    % This way we don't have to worry about the highlighting covering

@@ -23,22 +23,22 @@
 \begin{frame}[<+->]
   \setbeamercovered{dynamic}
   \frametitle{Ein F"arbungsproblem}
-   Es sei $\cE(n)$ die Klasse aller Graphen, welche die kantendisjunkte Vereinigung von $n$ vollst"andigen Graphen der Ordnung $n$ sind.
-
-   \begin{problem}
-     Sei $G\in \cE(n)$. Was ist die chromatische Zahl von $G$?
-   \end{problem}
+  Es sei $\cE(n)$ die Klasse aller Graphen, welche die kantendisjunkte Vereinigung von $n$ vollst"andigen Graphen der Ordnung $n$ sind.
+  \pause
+  \begin{problem}
+    Sei $G\in \cE(n)$. Was ist die chromatische Zahl von $G$?
+  \end{problem}
 \end{frame}
- \begin{frame}
-   \setbeamercovered{dynamic}
-   \frametitle{Ein F"arbungsproblem}
+\begin{frame}
+  \setbeamercovered{dynamic}
+  \frametitle{Ein F"arbungsproblem}
   \input{tikz1.tex}
- \end{frame}
- \begin{frame}
-   \setbeamercovered{dynamic}
-   \frametitle{Ein F"arbungsproblem}
+\end{frame}
+\begin{frame}
+  \setbeamercovered{dynamic}
+  \frametitle{Ein F"arbungsproblem}
   \input{tikz2.tex}
- \end{frame}
+\end{frame}
 
 \section{Die Erd\H os-Faber-Lov\'asz Vermutung}
 
@@ -48,35 +48,37 @@
   \begin{conjecture}[Erd\H{o}s-Faber-Lov\'asz(1972)]
     Sei $G\in\cE(n)$. Dann gilt $\chi(G) \leq n$.
   \end{conjecture}
-  \pause
-  Ein Hypergraph $H$ hei{\ss}t \DF{linear}, falls $|e\cap e'| \leq 1$ f"ur alle $e,e'\in E(H)$.
-  \pause
-  \begin{conjecture}
-    Sei $H$ ein linearer Hypergraph. Dann gilt $\chi'(H) \leq |H|$.
-  \end{conjecture}
+  \onslide<2-> {Ein Hypergraph $H$ hei{\ss}t \DF{linear}, falls $|e\cap e'| \leq 1$ f"ur alle $e,e'\in E(H)$. }
+  \onslide<3-> {
+    \begin{conjecture}
+      Sei $H$ ein linearer Hypergraph. Dann gilt $\chi'(H) \leq |H|$.
+    \end{conjecture} 
+  }
 \end{frame}
 
 \begin{frame}[<+->]
   \setbeamercovered{dynamic}
   \frametitle{Die Erd\H{o}s-Faber-Lov\'asz Vermutung}
-  \begin{theorem}[Chung \& Lawler]
+  \begin{proposition}[Chung \& Lawler]
     F"ur jeden Graphen $G\in \cE(n)$ gilt $\chi(G) \leq \frac{3n}{2} -2$.
-  \end{theorem}
-  \begin{theorem}[Kahn]
+  \end{proposition}
+  \begin{proposition}[Kahn]
     F"ur jeden linearen Hypergraphen $H$ ist $\chi'(H) \leq |H| + o(|H|)$.
-  \end{theorem}
+  \end{proposition}
 \end{frame}
+
+\section{Krauszzerlegungen}
 
 \begin{frame}[<+->]
   \setbeamercovered{dynamic}
   \frametitle{Krauszzerlegungen}
-    Eine Menge von Untergraphen $\mathcal{K}$ von $G$ hei{\ss}t \DF{Krauszzerlegung} von $G$, falls gilt:
-    \pause
-    \begin{enumerate}[<+->]
-      \item Alle $K\in \mathcal{K}$ sind vollst"andige Graphen der Ordnung $|K| \geq 2$.
-      \item Sind $K,K'\in \mathcal{K}$ verschieden, so gilt $|K\cap K'| \leq 1$.
-      \item $\bigcup\limits_{K\in \mathcal{K}} K = G$.
-    \end{enumerate}
+  Eine Menge von Untergraphen $\mathcal{K}$ von $G$ hei{\ss}t \DF{Krauszzerlegung} von $G$, falls gilt:
+  \pause
+  \begin{enumerate}[<+->]
+    \item Alle $K\in \mathcal{K}$ sind vollst"andige Graphen der Ordnung $|K| \geq 2$.
+    \item Sind $K,K'\in \mathcal{K}$ verschieden, so gilt $|K\cap K'| \leq 1$.
+    \item $\bigcup\limits_{K\in \mathcal{K}} K = G$.
+  \end{enumerate}
 \end{frame}
 
 \begin{frame}
@@ -91,136 +93,152 @@
   \begin{itemize}[<+->]
     \item $d_{\mathcal{K}}(v) = | \set{K\in \mathcal{K}}{v\in K}| $, der \DF{Grad} von $v$ in $\mathcal{K}$.
     \item $\delta(\mathcal{K})$, der \DF{Minimalgrad} .
-    \item $\kappa_{d}(G)$, die kleinste Zahl $p$, sodass $G$ eine Krauszzerlegung $\mathcal{K}$ mit $|\mathcal{K}| = p$ besitzt ($\kappa_{d}(G) = \infty$, falls kein solches $p$ existiert).
+    \item $\kappa_{d}(G)$, die kleinste Zahl $p$, sodass $G$ eine Krauszzerlegung $\mathcal{K}$ mit $|\mathcal{K}| = p$ und $\delta(\mathcal{K}) = d$ besitzt ($\kappa_{d}(G) = \infty$, falls kein solches $p$ existiert).
   \end{itemize}
   \visible<4> {
-  \begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{images/k5krauszdecomp}
-  \end{figure} }
-\end{frame}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=\textwidth]{images/k5krauszdecomp}
+    \end{figure} }
+  \end{frame}
+
+  \begin{frame}[<+->]
+    \setbeamercovered{dynamic}
+    \frametitle{Krauszzerlegungen und die Erd\H os-Faber-Lov\'asz Vermutung}
+    \begin{proposition}
+      Die folgenden Aussagen sind "aquivalent:
+      \begin{enumerate}[<+->]
+        \item F"ur alle Graphen $G\in \cE(n)$ gilt $\chi(G) \leq n$.
+        \item F"ur alle linearen Hypergraphen $H$ gilt $\chi'(H) \leq |H|$.
+        \item F"ur alle Graphen $G$ gilt $\chi(G) \leq \kappa_{2}(G)$.
+      \end{enumerate}
+    \end{proposition}
+  \end{frame}
+
+  \begin{frame}
+    \setbeamercovered{dynamic}
+    \frametitle{Krauszzerlegungen und die Erd\H os-Faber-Lov\'asz Vermutung}
+    \input{tikz5.tex}
+  \end{frame}
+  \begin{frame}
+    \setbeamercovered{dynamic}
+    \frametitle{Krauszzerlegungen und die Erd\H os-Faber-Lov\'asz Vermutung}
+    \input{tikz4.tex}
+  \end{frame}
+  \section{Eigenwerte von Graphen}
+  \begin{frame}[<+->]
+    \setbeamercovered{dynamic}
+    \frametitle{Eigenwerte von Graphen}
+    Es sei $A(G)$ die \DF{Adjazenzmatrix} von $G$ mit 
+    $$A(G)_{ij} = \begin{cases}
+      1 & \text{ falls } v_iv_j \in E(G) \\
+      0 & \text{ sonst.}
+    \end{cases}$$
+    \pause
+    Die \DF{Eigenwerte} von $G$ sind dann die Eigenwerte von $A(G)$. 
+    \pause
+    Wir bezeichnen mit $\lambda_{i}(G)$ den \DF{$i$-gr"o{\ss}ten Eigenwert} von $G$. Also gilt 
+    $$\lambda_{max}(G) = \lambda_{1}(G) \geq \lambda_{2}(G) \geq \dots \geq \lambda_{n}(G) = \lambda_{min}(G).$$
+    \pause
+    \begin{exmpl}
+      $$\lambda_{1}(K_n) = n-1 \text{ und } \lambda_{i}(K_n) = -1, 2 \leq i \leq n$$
+    \end{exmpl}
+  \end{frame}
 
 
+  \begin{frame}[<+->]
+    \setbeamercovered{dynamic}
+    \frametitle{Chromatische Zahl und Eigenwerte}
+    \begin{proposition}[Wilf]
+      Ist $G$ ein zusammenh"angender Graph, so gilt $\chi(G) \leq \lambda_{max}(G) +1$. Gleichheit tritt nur dann auf, wenn $G$ ein vollst"andiger Graph oder ein ungerader Kreis ist.
+    \end{proposition}
+    \begin{proposition}[Hoffman]
+      Ist $G$ ein Graph, so gilt $\chi(G) \geq 1- \frac{\lambda_{max}(G)}{\lambda_{min}(G)}$. 
+    \end{proposition}
+  \end{frame}
+  \begin{frame}[<+->]
+    \setbeamercovered{dynamic}
+    \frametitle{Krauszzerlegungen und Eigenwerte}
+    \begin{proposition}
+      Sei $\mathcal{K} = \{K^{1}, K^{2}, \dots , K^{p} \}$ eine Krauszzerlegung von $G$. Wir setzen $d_i = d_{\mathcal{K}}(v_i)$, wobei wir die Nummerierung der Ecken so w"ahlen, dass $d_1 \geq d_2 \geq \dots \geq d_n\geq d$ gilt.
+      Dann gelten folgende Aussagen:
+      \begin{enumerate}
+        \item $\lambda_{i}(G) \geq -d_{n-i+1}$ f"ur alle $1 \leq i \leq n$. 
+        \item $\lambda_{p+1}(G) \leq -d$, falls $p< n$.
+      \end{enumerate}
+    \end{proposition}
+  \end{frame}
 
-\begin{frame}[<+->]
-  \setbeamercovered{dynamic}
-  \frametitle{Krauszzerlegungen und die Erd\H os-Faber-Lov\'asz Vermutung}
-  \begin{theorem}
-    Die folgenden Aussagen sind "aquivalent:
-    \begin{enumerate}[<+->]
-      \item F"ur alle Graphen $G\in \cE(n)$ gilt $\chi(G) \leq n$.
-      \item F"ur alle Graphen $G$ gilt $\chi(G) \leq \kappa_{2}(G)$.
-      \item F"ur alle linearen Hypergraphen $H$ gilt $\chi'(H) \leq |H|$.
-    \end{enumerate}
-  \end{theorem}
-\end{frame}
+  \section{Chromatische Zahl und Eigenwerte}
 
-\begin{frame}
-  \setbeamercovered{dynamic}
-  \frametitle{Krauszzerlegungen und die Erd\H os-Faber-Lov\'asz Vermutung}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\textwidth]{images/k4krausztohypergraph}
-\end{figure}
-\end{frame}
-\begin{frame}
-  \setbeamercovered{dynamic}
-  \frametitle{Krauszzerlegungen und die Erd\H os-Faber-Lov\'asz Vermutung}
-  \begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{images/KvLinegraph.eps}
-  \end{figure}
-\end{frame}
-\section{Eigenwerte von Graphen}
-\begin{frame}[<+->]
-  \setbeamercovered{dynamic}
-  \frametitle{Eigenwerte von Graphen}
-  Es sei $A(G)$ die \DF{Adjazenzmatrix} von $G$ mit 
-  $$A(G)_{ij} = \begin{cases}
-    1 & \text{, falls } v_iv_j \in E(G) \\
-    0 & \text{, sonst.}
-  \end{cases}$$
-  \pause
-  Die \DF{Eigenwerte} von $G$ sind dann die Eigenwerte von $A(G)$. 
-  \pause
-  Wir bezeichnen mit $\lambda_{i}(G)$ den $i$-gr"o{\ss}ten Eigenwert von $G$. Also gilt 
-  $$\lambda_{max}(G) = \lambda_{1}(G) \geq \lambda_{2}(G) \geq \dots \geq \lambda_{n}(G) = \lambda_{min}(G).$$
-\end{frame}
+  \begin{frame}[<+->]
+    \setbeamercovered{dynamic}
+    \frametitle{Krauszzerlegungen und Eigenwerte}
 
+    Es seien $A= A(G)$, $D= \operatorname{diag}(d_1,d_2,\dots,d_n)$ und $B\in\R^{n\times p}$ die Inzidenzmatrix von $\mathcal{K}$. Dann gilt
+    $$ B_{ij} = \begin{cases}
+      1 & \text{ falls } v_i\in K^{j} \\
+      0 & \text{ sonst.} 
+    \end{cases} $$
+    \pause
+    Sei $M=BB^{T}$. Dann ist $M$ positiv semidefinit und $M=A+D$, wie sich leicht zeigen l"asst. \pause Also folgt 
+    $$\lambda_{i}(A) \geq \lambda_{i}(-D) = -\lambda_{n-i+1}(D) = -d_{n-i+1}$$
+    \pause
+    Ist $p < n$, so ist $\operatorname{rang}(M) = \operatorname{rang} (B) \leq p < n$, insbesondere ist $\lambda_{p+1}(M) = 0$. 
+    \pause
+    Somit gilt
+    $$\lambda_{p+1}(A) + d  \leq \lambda_{p+1}(A) + \lambda_{n}(D) \leq \lambda_{p+1}(M) = 0. $$
+  \end{frame}
 
-\begin{frame}[<+->]
-  \setbeamercovered{dynamic}
-  \frametitle{Chromatische Zahl und Eigenwerte}
-  \begin{theorem}[Wilf]
-    Ist $G$ ein zusammenh"angender Graph, so gilt $\chi(G) \leq \lambda_{max}(G) +1$.
-  \end{theorem}
-  \begin{theorem}[Hoffman]
-    Ist $G$ ein Graph, so gilt $\chi(G) \geq 1- \frac{\lambda_{max}(G)}{\lambda_{min}(G)}$.
-  \end{theorem}
-\end{frame}
-\begin{frame}[<+->]
-  \setbeamercovered{dynamic}
-  \frametitle{Krauszzerlegungen und Eigenwerte}
-  \begin{theorem}
-    Sei $\mathcal{K} = \{K^{1}, K^{2}, \dots , K^{p} \}$ eine Krauszzerlegung von $G$. Wir setzen $d_i = d_{\mathcal{K}}(v_i)$, wobei wir die Nummerierung der Ecken so w"ahlen, dass $d_1 \geq d_2 \geq \dots \geq d_n$ gilt.
-    Dann gelten folgende Aussagen:
-    \begin{enumerate}
-      \item $\lambda_{i}(G) \geq -d_{n-i+1}$ f"ur alle $1 \leq i \leq n$. 
-      \item $\lambda_{p+1}(G) \leq -d_n$, falls $p< n$.
-    \end{enumerate}
-  \end{theorem}
-\end{frame}
-\begin{frame}[<+->]
-  \setbeamercovered{dynamic}
-  \frametitle{Krauszzerlegungen und Eigenwerte}
+  \begin{frame}[<+->]
+    \setbeamercovered{dynamic}
+    \frametitle{Eigenwerte von Graphen}
+    \begin{itemize}[<+->]
+      \item F"ur $d\in \N$ sei $\xi_{d}(G) = | \set{i \in \N}{\lambda_{i}(G) > -d}|$.
+      \item Es ist leicht zu zeigen, dass $\xi_{d}(G) \leq \kappa_{d}(G)$ gilt.
+    \end{itemize}
+    \begin{conjecture}
+      F"ur alle Graphen $G$ gilt $\chi(G) \leq \xi_{2}(G)$.
+    \end{conjecture}
+    \begin{itemize}[<+->]
+      \item Gilt diese Vermutung, so gilt auch die Erd\H os-Faber-Lov\'asz Vermutung, denn:
+        \begin{itemize}[<+->]
+          \item Ist $\chi(G) \leq \xi_{2}(G)$, so ist $\chi(G) \leq \kappa_{2}(G)$.
+          \item Gilt $\chi(G) \leq \kappa_{2}(G)$ f"ur alle Graphen, so gilt die Erd\H os-Faber-Lov\'asz Vermutung.
+        \end{itemize}
+    \end{itemize}
+  \end{frame}
 
-  Es seien $A= A(G)$, $D= \operatorname{diag}(d_1,d_2,\dots,d_n)$ und $B\in\R^{n\times p}$ die Inzidenzmatrix von $\mathcal{K}$. Dann gilt
-  $$ B_{ij} = \begin{cases}
-    1 & \text{ falls } v_i\in K^{j} \\
-    0 & \text{ sonst.} 
-  \end{cases} $$
-  \pause
-  Sei $M=BB^{T}$. Dann ist $M$ positiv semidefinit und $M=A+D$, wie sich leicht zeigen l"asst. \pause Also folgt 
-  $$\lambda_{i}(A) \geq \lambda_{i}(-D) = -\lambda_{n-i+1}(D) = -d_{n-i+1}$$
-  \pause
-  Ist $p < n$, so ist $\operatorname{rang}(M) = \operatorname{rang} (B) \leq p < n$, insbesondere ist $\lambda_{p+1}(M) = 0$. 
-  \pause
-  Somit gilt
-  $$\lambda_{p+1}(A) + d_n \leq \lambda_{p+1}(M) = 0. $$
-\end{frame}
+  \begin{frame}[<+->]
+    \setbeamercovered{dynamic}
+    \frametitle{Graphen mit $\chi \leq \xi_{2}$}
+    \pause
+    Vermutung gilt f"ur 
+    \pause
+    \begin{itemize}
+      \item $3$-f"arbbare Graphen.
+      \item Kneser Graphen.
+      \item Planare Graphen.
+      \item Perfekte Graphen.
+      \item Kantengraphen.
+    \end{itemize}
+  \end{frame}
+  \begin{frame}[<+->]
+    \setbeamercovered{dynamic}
+    \frametitle{Graphen mit $\chi \leq \xi_{2}$}
+    \begin{proposition}
+      Sei $G$ ein Graph. Dann gilt $\chi(G) + \chi(\overline G) \leq \xi_{2}(G) + \xi_{2}(\overline G)$.
+    \end{proposition}
+    \begin{cor}
+      Sei $G$ ein Graph. Dann gilt $\chi(G) \leq \xi_{2}(G) \text{ oder } \chi(\overline G) \leq \xi_{2}(\overline G)$.
+    \end{cor}
+  \end{frame}
 
-\begin{frame}[<+->]
-  \setbeamercovered{dynamic}
-  \frametitle{Eigenwerte von Graphen}
-  \begin{itemize}[<+->]
-    \item F"ur $d\in \N$ sei $\xi_{d}(G) = | \set{i \in \N}{\lambda_{i}(G) > -d}|$.
-    \item Es ist leicht zu zeigen, dass $\xi_{d}(G) \leq \kappa_{d}(G)$ gilt.
-  \end{itemize}
-  \begin{conjecture}
-    F"ur alle Graphen $G$ gilt $\chi(G) \leq \xi_{2}(G)$.
-  \end{conjecture}
-\end{frame}
-
-\begin{frame}[<+->]
-  \setbeamercovered{dynamic}
-  \frametitle{Graphen mit $\chi \leq \xi_{2}$}
-  \pause
-  Vermutung gilt f"ur 
-  \pause
-  \begin{itemize}
-    \item Graphen $G$ mit $\chi(G) \leq 3$.
-    \item Kneser Graphen.
-    \item Planare Graphen.
-    \item Perfekte Graphen.
-    \item Kantengraphen.
-  \end{itemize}
-  \pause
-\end{frame}
- \begin{frame}
-   \setbeamercovered{dynamic}
-   \frametitle{Graphen mit $\chi \leq \xi_{2}$}
-   \begin{theorem}
-     Sei $G$ ein Graph. Dann gilt $\chi(G) \leq \xi_{2}(G) \text{ oder } \chi(\overline G) \leq \xi_{2}(\overline G)$.
-   \end{theorem}
- \end{frame}
-\end{document}
+  \begin{frame}
+    \setbeamercovered{dynamic}
+    \frametitle{}
+    \begin{center}
+      Vielen Dank f"ur Ihre Aufmerksamkeit!
+    \end{center}
+  \end{frame}
+  \end{document}
